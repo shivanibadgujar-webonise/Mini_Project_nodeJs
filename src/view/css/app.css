@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.form input {
+  width: 300px;
+  height: 30px;
+  margin: 8px;
+}
+
+.form input .update_input {
+  width: 100px;
+  height: 30px;
+  margin: 8px;
+}
+
+.form button {
+  margin: 10px;
+  background-color: rgb(11, 11, 196);
+  color: white;
+}
+
+.listTable,
+.dataTable {
+  width: 1000px;
+  margin-left: 0px;
+}
+
+.listTable thead tr th {
+  padding: 10px 0px 10px 0px;
+}
+
+.dataTable tbody tr td {
+  padding: 0px 60px 0px 0px;
+}
+
+.show_table_link {
+  position: absolute;
+  right: 630px;
+  bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.979);
+  padding: 6px 6px;
+  text-decoration: none;
+  color: black;
+}
+
+.add_student {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  background-color: rgba(255, 255, 255, 0.979);
+  padding: 6px 6px;
+  text-decoration: none;
+  color: black;
+}
