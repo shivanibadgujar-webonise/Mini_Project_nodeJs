@@ -1,0 +1,34 @@
+body {
+  background-color: rgb(179, 150, 228);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.main-div {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  display: flex;
+}
+
+.main-div .login-div {
+  margin-left: 200px;
+}
+
+.errorMsg {
+  position: absolute;
+  left: 550px;
+  bottom: 20px;
+}
+
+
+
