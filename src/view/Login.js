@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
-  const [userEmail, setuserEmail] = useState("");
-  const [userPassword, setuserPassword] = useState("");
+  const [userEmail, setuserEmail] = useState('');
+  const [userPassword, setuserPassword] = useState('');
 
-  const [userEmailLog, setuserEmailLog] = useState("");
-  const [userPasswordLog, setuserPasswordLog] = useState("");
+  const [userEmailLog, setuserEmailLog] = useState('');
+  const [userPasswordLog, setuserPasswordLog] = useState('');
 
-  const [LoginStatus, setLoginStatus] = useState("");
+  const [LoginStatus, setLoginStatus] = useState('');
 
   let history = useHistory();
 
   Axios.defaults.withCredentials = true;
 
   const register = () => {
-    Axios.post("http://localhost:3001/register", {
+    Axios.post('http://localhost:3001/register', {
       email: userEmail,
       password: userPassword,
     }).then((response) => {
@@ -26,7 +26,7 @@ function Login() {
   };
 
   const login = () => {
-    Axios.post("http://localhost:3001/login", {
+    Axios.post('http://localhost:3001/login', {
       email: userEmailLog,
       password: userPasswordLog,
     }).then((response) => {
@@ -34,17 +34,17 @@ function Login() {
         setLoginStatus(response.data.message);
       } else {
         setLoginStatus(response.data[0].user_email);
-        if (response.data[0].user_email === "admin@gmail.com") {
-          history.push("/App");
+        if (response.data[0].user_email === 'admin@gmail.com') {
+          history.push('/App');
         } else {
-          history.push("/Student_list");
+          history.push('/Student_list');
         }
       }
     });
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
+    Axios.get('http://localhost:3001/login').then((response) => {
       console.log(response);
     });
   }, []);

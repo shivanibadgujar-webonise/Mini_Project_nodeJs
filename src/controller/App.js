@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from "react";
-import "../view/css/app.css";
-import Axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import '../view/css/app.css';
+import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function App() {
-  const [studentName, setStudentName] = useState("");
-  const [studentEmail, setStudentEmail] = useState("");
-  const [studentPassword, setStudentPassword] = useState("");
-  const [studentLocation, setStudentLocation] = useState("");
-  const [deptName, setDeptName] = useState("");
-  const [hodName, setHodName] = useState("");
-  const [updateData, setUpdateData] = useState("");
+  const [studentName, setStudentName] = useState('');
+  const [studentEmail, setStudentEmail] = useState('');
+  const [studentPassword, setStudentPassword] = useState('');
+  const [studentLocation, setStudentLocation] = useState('');
+  const [deptName, setDeptName] = useState('');
+  const [hodName, setHodName] = useState('');
+  const [updateData, setUpdateData] = useState('');
 
   const [studentList, setStudentList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/get").then((response) => {
+    Axios.get('http://localhost:3001/api/get').then((response) => {
       setStudentList(response.data);
     });
   }, []);
 
   const submitEntry = () => {
-    Axios.post("http://localhost:3001/api/insert", {
+    Axios.post('http://localhost:3001/api/insert', {
       studentName: studentName,
       studentEmail: studentEmail,
       studentPassword: studentPassword,
@@ -48,12 +48,12 @@ function App() {
   };
 
   const updateEntry = (sname) => {
-    Axios.put("http://localhost:3001/api/update", {
+    Axios.put('http://localhost:3001/api/update', {
       studentName: sname,
       studentLocation: updateData,
     });
 
-    setUpdateData("");
+    setUpdateData('');
   };
   return (
     <div className="App">
